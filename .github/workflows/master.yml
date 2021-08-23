@@ -1,0 +1,22 @@
+
+
+name: GitHubActionsBasic
+
+on:
+  push:
+    branches:
+     - main
+    
+jobs:
+  ActionJibs:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Print Message
+        run: echo "Hello World from Testing Job"
+        
+  my_deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print Message
+        run: echo "Hello World from Testing Job"
