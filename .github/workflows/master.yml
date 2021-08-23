@@ -8,15 +8,17 @@ on:
      - main
     
 jobs:
-  ActionJibs:
+  ActionJobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Print Message
+      - name: Print Message in Testing
         run: echo "Hello World from Testing Job"
         
   my_deploy:
     runs-on: ubuntu-latest
+    needs: [ActionJobs]
+    
     steps:
-      - name: Print Message
+      - name: Print Message in Deploy
         run: echo "Hello World from Testing Job"
