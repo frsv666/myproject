@@ -2,6 +2,11 @@
 
 name: GitHubActionsBasic
 
+env: 
+  APPLICATION_NAME: "MyFlask"
+  PACKAGE_NAME    : "flask_deploy_version-${{ github.sha }}"
+
+
 on:
   push:
     branches:
@@ -15,6 +20,12 @@ jobs:
       - name: Print Message in Testing
         run: echo "Hello World from Testing Job"
         
+      - name: Execure few commands
+        run: |
+          echo "Hello Message1"
+          echo "Hello Message2"
+          echi "Application name: $ {{ env.APPLICATION_NAME }}"
+      
   my_deploy:
     runs-on: ubuntu-latest
     needs: [ActionJobs]
@@ -22,3 +33,7 @@ jobs:
     steps:
       - name: Print Message in Deploy
         run: echo "Hello World from Testing Job"
+        
+      - name: Printing Deployment Package
+        run: echo "Deploy Package name is $ {{ env.PACKAGE_NAME }}"
+          
