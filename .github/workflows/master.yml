@@ -24,7 +24,7 @@ jobs:
         run: |
           echo "Hello Message1"
           echo "Hello Message2"
-          echo "Application name: $ {{ env.APPLICATION_NAME }}"
+          echo "Application name: ${{ env.APPLICATION_NAME }}"
       
   my_deploy:
     runs-on: ubuntu-latest
@@ -35,5 +35,5 @@ jobs:
         run: echo "Hello World from Testing Job"
         
       - name: Printing Deployment Package
-        run: echo "Deploy Package name is $ {{ env.PACKAGE_NAME }}"
+        run: echo "Deploy Package name is ${{ env.PACKAGE_NAME }}"
           
