@@ -5,7 +5,7 @@ name: GitHubActionsBasic
 on:
   push:
     branches:
-     - master
+     - main
     
 jobs:
   ActionJibs:
